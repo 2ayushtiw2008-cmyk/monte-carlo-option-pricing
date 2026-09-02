@@ -9,4 +9,4 @@ def black_scholes(S,K,T,r,sigma):
   call_price=S*Nd1-K*(math.exp(-r*T))*Nd2
   return call_price
 price=black_scholes(100, 100, 1, 0.05, 0.2)
-print(price
+print(price)
