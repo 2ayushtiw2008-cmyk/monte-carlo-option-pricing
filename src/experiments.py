@@ -59,7 +59,7 @@ for N in simulation_size:
     average_runtime = (end_time - start_time) / runs
     results.append([N,bs_price,mean_error,std_error,average_runtime])
 
-# presenting data
+# presenting data (GRAPHS DON'T PLOT ON GITHUB, BUT ON GOOGLE COLAB)
 results_df = pandas.DataFrame(results, columns = ["Simulations","Black-Scholes Price","Mean Absolute Error","Error Standard Deviation","Average Runtime"])
 print(results_df)
 
@@ -70,4 +70,14 @@ plt.xlabel("Number of Simulations")
 plt.ylabel("Mean Absolute Error")
 plt.title("Monte Carlo Pricing Error vs Number of Simulations")
 plt.xscale("log")
+plt.show()
+
+plt.figure()
+
+plt.plot(results_df["Simulations"],results_df["Average Runtime"],marker="o")
+plt.xlabel("Number of Simulations")
+plt.ylabel("Average Runtime (seconds)")
+plt.title("Monte Carlo Runtime vs Number of Simulations")
+plt.xscale("log")
+
 plt.show()
