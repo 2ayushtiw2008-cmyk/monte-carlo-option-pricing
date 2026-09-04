@@ -29,16 +29,13 @@ def monte_carlo(S, K, T, r, sigma, N):
 
     Z = numpy.random.normal(size=N)
 
-    ST = S * numpy.exp(
-        (r - 0.5 * sigma**2) * T
-        + sigma * numpy.sqrt(T) * Z
-    )
+    ST = S * numpy.exp((r - 0.5 * sigma**2) * T+ sigma * numpy.sqrt(T) * Z)
 
     payoffs = numpy.maximum(ST - K, 0)
 
     average_payoff = numpy.mean(payoffs)
 
-    # Discount the average payoff back to today
+    # Discounting
     call_price = numpy.exp(-r * T) * average_payoff
 
     return call_price
@@ -50,8 +47,6 @@ S = 100
 K = 100
 T = 1
 r = 0.05
-
-# Number of simulations stays fixed
 N = 10000
 
 
@@ -60,7 +55,7 @@ runs = 20
 results = []
 
 
-# Testing different volatilitiies
+# Testing volatilitiies
 
 for sigma in volatility_values:
 
