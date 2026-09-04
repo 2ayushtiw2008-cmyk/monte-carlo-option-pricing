@@ -7,8 +7,6 @@ import matplotlib.pyplot as plt
 
 # Black Scholes formula
 
-from scipy.stats import norm
-
 def black_scholes(S, K, T, r, sigma):
 
     d1 = (math.log(S / K) + T * (r + (sigma**2) / 2)) / (sigma * math.sqrt(T))
@@ -55,7 +53,7 @@ runs = 20
 results = []
 
 
-# Testing volatilitiies
+# Testing volatilities
 
 for sigma in volatility_values:
 
