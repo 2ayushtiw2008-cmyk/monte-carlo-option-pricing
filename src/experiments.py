@@ -46,7 +46,7 @@ simulation_size = [100, 500, 1000, 5000, 10000, 50000, 100000]
 
 runs = 20
 results = []
-for N in simulation_sizes:
+for N in simulation_size:
     errors = []
     start_time = time.perf_counter()
     for i in range(runs):
